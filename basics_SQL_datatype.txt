@@ -1,0 +1,64 @@
+Data types in SQL:
+
+String Data type:
+
+(you can find a digit, a symbol, a blank space)
+CHAR(10), VARCHAR(5000), ENUM('60','None')
+
+CHAR	- fixed - 1 char 1 byte - fixed amount of bytes - Max -> 255 byes -> FASTER
+	- good for states for example, fixed.
+
+VARCHAR - variable - 1 varchar 1 byte - variable amount of bytes - Max -> 65,535
+	- good for password because is variable.
+
+ENUM	- ENUM('M', 'F') -> you can only use M or F;
+
+
+Numeric Data types:
+
+TINYINT -	1 byte	 256
+SMALLINT -	2 bytes	 65535
+MEDIUM INT -	3 bytes	 16777215
+INT - 		4 bytes	 4294967295
+BIGINT -	8 bytes	 18446744073709551615
+	
+Precision: 10.523 -> Precision 5
+Scale: 10.523 -> Scale 3
+
+Fixed - DECIMAL(5, 3) == 10.523 or 36.875 
+Fixed - NUMERIC(5, 3) == 10.523 or 36.875 
+Since is fixed 10.5 became 10.500
+Since is fixed 10.5236789 became 10.524 /!\
+
+Fixed - DECIMAL(5) == DECIMAL(5, 0) == 1234567
+	NUMERIC(5) == NUMERIC(5, 0) == 1234567
+
+NUMERIC = DECIMAL good for salaries
+NUMERI (p , s)
+precision = p = 7
+scale = s = 2
+e.g. NUMERIC(7,2) = 75,000.50
+
+Floating-point data type:
+- used for approximate values only
+- aims to balance between range and precision (=> 'floating')
+
+FLOAT 4 bytes/23 digits - FLOAT(5,3) == 10.523 -> Float doesn't give us any msg about if we are not respecting the data type size/precision vs space
+
+DOUBLE 8 bytes/53 digits 
+
+Other data types:
+	DATE YYYY-MM-DD between 1000-01-01 to 9999-12-31
+	DATETIME HH:MM:SS between 0 to 23:59:59.999999
+	example: '2018-07-25 9:30:00'
+	TIMESTAMP YYYY-MM-DD 00:00:00 UTC between 1970-01-01 00:00:00 UTC -> 2038-01-19 03:14:07 UTC
+	example: used for duration, used for time zones
+
+CHAR, VARCHAR, DATE, DATETIME, TIMESTAMP -> data must be written within quotes
+INTEGER, DECIMAL, NUMERIC, FLOAT, DOUBLE -> only numeric values are written without quotes
+
+BLOB, Binary Large Object
+refers to a file of binary data - data with 1s and 0s
+involves saving files in a record:
+	*.doc *.xlsx *.xml *.jpg *.wav
+	

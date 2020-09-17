@@ -1,0 +1,83 @@
+DDL -> Data Definition Language -> Creation of data
+
+KEYWRODS CANNOT BE VARIABLES NAMES!
+
+	- CREATE
+	- ALTER
+	- DROP
+	- RENAME
+	- TRUNCATE (Remove the content of the whole table)
+
+DML -> Data Manipulation Language -> Manipulation of data
+	
+	- SELECT ... FROM...
+	- INSERT INTO... VALUES
+	- UPTADE... SET... WHERE
+	- DELETE... FROM... WHERE
+	
+DCL -> 	Data Control Language -> Assignment and removal of permissions to use this data
+
+	- GRANT type_of_permission ON database_name.table_name TO 'username'@'localhost'
+
+		- GRANT SELECT ON sales.customers TO 'frank'@'localhost';
+
+		OBS: frank will onyl be able to use SELECT
+		
+		- GRANT ALL ON TO 'frank'@'localhost';
+		
+	- REVOKE type_of_permission ON database_name.table_name TO 'username'@'localhost'
+
+		- REVOKE SELECT ON sales.customers FROM 'frank'@'localhost';
+
+		OBS: frank will onyl be able to use SELECT
+		
+		- REVOKE ALL ON Sales.* TO 'frank'@'localhost';
+
+TCL -> 	Transaction Control Language -> saving and restoring changes to a database
+	
+	
+	- COMMIT statement
+		- save the transaction in the database
+		- changes cannot be undone
+
+	- ROLLBACK
+		- allows you to take a step back
+		- the last change(s) made will not count
+		- reverts to the last non-committed state
+
+Relational databases
+	
+	data stored in a record of a table (full-row)
+		- retrieval of data
+		- updating of data
+		- efficiency
+		- data consistency
+		- data integrity
+		- speed
+		- security
+
+
+-------
+Primary Keys are the unique identifiers of a table:
+
+  Example of a primary key: Sales that was done
+- a column (or a set of columns) whose value exists and is unique for every record in a table is called a primary key
+- each table can have only one primary key
+- If we decied to have two columns as Primary key we will have a "pair" representing the primary key;
+- Primary key columns cannot have null values
+
+Table name: Sales
+Primary key: purchase_number (always underlined)
+Other fields: date_of_purchase, customer_id, item_code
+
+-------
+Foreign Keys identifies the relationships between tables, not the tables themselves:
+
+- always look for the foreign keys, as they show us where the relations are when you are trying to understand the relational schemas;
+
+-------
+Unique Keys: used whenever you would like to specify that you don't want to see duplicate data in a given field
+- unique keys can have null values, but primary keys cannot even though both are uniques
+- unique keys can have more than 1 in a table, but primary keys can only be one
+- example: head_quarter_phone_number (it is unique, but can the name be unique as well...)
+
